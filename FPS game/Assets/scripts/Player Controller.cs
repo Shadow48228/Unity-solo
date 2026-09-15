@@ -34,6 +34,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Quaternion playerRotation = Quaternion.identity;
+        playerRotation.y = playerCam.transform.rotation.y;
+        playerRotation.w = playerCam.transform.rotation.w;
+        transform.rotation = playerRotation;
+
         jumpRay.origin = transform.position;
         jumpRay.direction = -transform.up;
 
@@ -42,7 +47,9 @@ public class PlayerController : MonoBehaviour
         tempMove.x = (moveInput.x * speed) * transform.right.x;
         tempMove.z = (moveInput.y * speed) * transform.forward.z;
 
-        rb.linearVelocity = tempMove;
+        rb.linearVelocity = (tempMove.x * transform.right) +
+                            (tempMove.y * transform.up) +
+                            (tempMove.z * transform.forward);
 
     }
 
@@ -55,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if (Physics.Raycast(jumpRay, jumpDetectDistance)) ;
+        if (Physics.Raycast(jumpRay, jumpDetectDistance)) 
         {
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
         }
