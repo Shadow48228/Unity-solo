@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     PlayerInput playerInput;
     Rigidbody rb;
+    Camera playerCam;
 
     Ray jumpRay;
     Vector2 moveInput;
@@ -22,7 +23,12 @@ public class PlayerController : MonoBehaviour
 
         moveInput = Vector2.zero;
 
+        playerCam = Camera.main;
+
         jumpRay = new Ray(transform.position, -transform.up);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
