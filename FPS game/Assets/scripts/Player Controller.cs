@@ -31,21 +31,24 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         Quaternion playerRotation = Quaternion.identity;
         playerRotation.y = playerCam.transform.rotation.y;
         playerRotation.w = playerCam.transform.rotation.w;
         transform.rotation = playerRotation;
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
         jumpRay.origin = transform.position;
         jumpRay.direction = -transform.up;
 
         Vector3 tempMove = rb.linearVelocity;
 
-        tempMove.x = (moveInput.x * speed) * transform.right.x;
-        tempMove.z = (moveInput.y * speed) * transform.forward.z;
+        tempMove.x = (moveInput.x * speed);
+        tempMove.z = (moveInput.y * speed);
 
         rb.linearVelocity = (tempMove.x * transform.right) +
                             (tempMove.y * transform.up) +
