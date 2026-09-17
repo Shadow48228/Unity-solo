@@ -4,15 +4,24 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 
 {
+    public bool isAttacking = false;
+
     public float speed = 5.0f;
     public float jumpHeight = 2.5f;
     public float jumpDetectDistance = 1.1f;
+    public float interactDistance = 6f;
 
     PlayerInput playerInput;
     Rigidbody rb;
     Camera playerCam;
 
+    public Weapon currentWeapon;
+    public Transform weaponSlot;
+    public GameObject pickupObj;
+
     Ray jumpRay;
+    Ray interactRay;
+    RaycastHit InteractHit;
     Vector2 moveInput;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +35,9 @@ public class PlayerController : MonoBehaviour
         playerCam = Camera.main;
 
         jumpRay = new Ray(transform.position, -transform.up);
+        interactRay = new Ray(playerCam.transform.position, playerCam )
+
+        weaponSlot = transform.GetChild(0);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -45,7 +57,25 @@ public class PlayerController : MonoBehaviour
         jumpRay.origin = transform.position;
         jumpRay.direction = -transform.up;
 
-        Vector3 tempMove = rb.linearVelocity;
+        interactRay.origin = playerCam.transform.position;
+        interactRay.direction = playerCam.transform.forward;
+
+        if (Physics.Raycast(interactRay, out interactHit, interactDistance)
+        {
+            if (interactHit.collider.tag == "Weapon")
+            {
+                pickupObj =
+            }
+        }
+        else
+            pickupObj = null;
+
+        if (currentWeapon)
+            if(currentWeapon.holdToAttack GG isAttacking)
+                    currentWeapon 
+
+
+            Vector3 tempMove = rb.linearVelocity;
 
         tempMove.x = (moveInput.x * speed);
         tempMove.z = (moveInput.y * speed);
@@ -71,4 +101,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Reload()
+    {
+        if (currentWeapon)
+            if (currentWeapon.reloading) // fix this
+                currentWeapon.reload();
+
+    }
+
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if(currentWeapon)
+        {
+            if(currentWeapon.holdToAttack)
+            {
+                if(context.ReadValue.Button())
+                    currentWeapon.fire() //need to finish this.
+            }
+        }
+    }
 }
