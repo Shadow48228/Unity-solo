@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,11 +6,14 @@ public class PlayerController : MonoBehaviour
 
 {
     public bool isAttacking = false;
+    public bool hazardDamage = false;
 
-    public float speed = 5.0f;
+    public int health = 5;
+    public float speed = 5;
     public float jumpHeight = 2.5f;
     public float jumpDetectDistance = 1.1f;
     public float interactDistance = 6f;
+    public float hazardCooldown = 3f;
 
     PlayerInput playerInput;
     Rigidbody rb;
@@ -21,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     Ray jumpRay;
     Ray interactRay;
-    RaycastHit InteractHit;
+    RaycastHit interactHit;
     Vector2 moveInput;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,7 +39,7 @@ public class PlayerController : MonoBehaviour
         playerCam = Camera.main;
 
         jumpRay = new Ray(transform.position, -transform.up);
-        interactRay = new Ray(playerCam.transform.position, playerCam )
+        interactRay = new Ray(playerCam.transform.position, playerCam.transform.forward);
 
         weaponSlot = transform.GetChild(0);
 
@@ -54,28 +58,34 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //die
+        if(health <= 0)
+        {
+
+        }
+
         jumpRay.origin = transform.position;
         jumpRay.direction = -transform.up;
 
         interactRay.origin = playerCam.transform.position;
         interactRay.direction = playerCam.transform.forward;
 
-        if (Physics.Raycast(interactRay, out interactHit, interactDistance)
+        if (Physics.Raycast(interactRay, out interactHit, interactDistance))
         {
             if (interactHit.collider.tag == "Weapon")
             {
-                pickupObj =
+                pickupObj = interactHit.collider.gameObject;
             }
         }
         else
             pickupObj = null;
 
         if (currentWeapon)
-            if(currentWeapon.holdToAttack GG isAttacking)
-                    currentWeapon 
+            if (currentWeapon.holdToAttack && isAttacking)
+                currentWeapon.fire();
 
 
-            Vector3 tempMove = rb.linearVelocity;
+        Vector3 tempMove = rb.linearVelocity;
 
         tempMove.x = (moveInput.x * speed);
         tempMove.z = (moveInput.y * speed);
@@ -112,13 +122,78 @@ public class PlayerController : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if(currentWeapon)
+        if (currentWeapon)
         {
-            if(currentWeapon.holdToAttack)
+            if (currentWeapon.holdToAttack)
             {
-                if(context.ReadValue.Button())
-                    currentWeapon.fire() //need to finish this.
+                if (context.ReadValueAsButton())
+                    isAttacking = true;
+                else
+                    isAttacking = false;
             }
+
+            else if (context.ReadValueAsButton())
+                currentWeapon.fire();
         }
     }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if(context.ReadValueAsButton())
+        {
+            if (pickupObj)
+            {
+                if (pickupObj.tag == "Weapon")
+                {
+                    pickupObj.GetComponent<Weapon>().equip(this);
+                }
+            }
+            else if (currentWeapon)
+                Reload();
+        }
+    }
+
+    public void DropWeapon()
+    {
+        if (currentWeapon)
+            currentWeapon.unequip();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ammo")
+        {
+            if(currentWeapon && currentWeapon.ammo < currentWeapon.maxAmmo)
+            {
+                int ammoFill = currentWeapon.maxAmmo - currentWeapon.ammo;
+                if (ammoFill < currentWeapon.ammoRefill)
+                {
+                    currentWeapon.ammo += ammoFill;
+                }
+                else
+                {
+                    currentWeapon.ammo += currentWeapon.ammoRefill;
+                }
+                Destroy(collision.gameObject);
+            }
+        }
+
+        if (collision.gameObject.tag == "Hazard")
+        {
+            if (hazardDamage)
+                StartCoroutine("damageCooldown");
+        }
+    }
+
+    IEnumerator damageCooldown()
+    {
+        hazardDamage = true;
+
+        yield return new WaitForSeconds(hazardCooldown);
+
+        health--;
+        hazardDamage = false;
+
+    }
+
 }

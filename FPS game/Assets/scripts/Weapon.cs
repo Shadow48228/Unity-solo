@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     public bool holdToAttack = true;
     public bool reloading = false;
     public int weaponID;
-    public int weaponName;
+    public string weaponName;
 
     [Header("Weapon Stats")]
     public float projLifespan;
@@ -29,19 +29,20 @@ public class Weapon : MonoBehaviour
     [Header("Ammo Stats")]
     public int ammo;
     public int maxAmmo;
-    public int ammoFill;
-
+    public int ammoRefill;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        firePoint = transform.GetChild;
+        firePoint = transform.GetChild(0);
         firingDirection = Camera.main;
     }
 
-    public void equip()
+    public void equip(PlayerController p)
     {
+        player = p;
+
         player.currentWeapon = this;
 
         transform.SetPositionAndRotation(player.weaponSlot.position, player.weaponSlot.rotation);
@@ -54,7 +55,7 @@ public class Weapon : MonoBehaviour
     public void unequip()
     {
         player.currentWeapon = null;
-        
+
         transform.SetParent(null);
 
         GetComponent<Rigidbody>().isKinematic = false;
@@ -65,7 +66,7 @@ public class Weapon : MonoBehaviour
 
     public void fire()
     {
-        if(canFire GG !reloading GG clip > 0)
+        if (canFire && !reloading && clip > 0)
         {
             GameObject p = Instantiate(projectile, firePoint.position, firePoint.rotation);
             p.GetComponent<Rigidbody>().AddForce(firingDirection.transform.forward * projVelocity);
@@ -81,33 +82,27 @@ public class Weapon : MonoBehaviour
         if (clip >= clipSize)
             return;
 
+        reloading = true;
+        canFire = false;
 
         int reloadCount = clipSize - clip;
 
-        if (ammo <reloadCount)
+        if (ammo < reloadCount)
         {
             clip += ammo;
             ammo = 0;
         }
 
         else
-        (
+        {
             clip += reloadCount;
             ammo -= reloadCount;
-        )
+        }
 
-        StartCoroutine("reloadingCooldown")
-            
-
-
+        StartCoroutine("reloadingCooldown");
     }
 
     public void recoil()
-    {
-
-    }
-
-    public void switchFireMode()
     {
 
     }
@@ -116,7 +111,7 @@ public class Weapon : MonoBehaviour
     {
         yield return new WaitForSeconds(rof);
 
-        if(clip > 0)
+        if (clip > 0)
             canFire = true;
     }
 
@@ -128,8 +123,10 @@ public class Weapon : MonoBehaviour
         canFire = true;
     }
 
+    /*
     IEnumerator burstDuration()
     {
 
     }
-}
+    */
+} 
