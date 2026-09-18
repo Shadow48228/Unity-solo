@@ -76,6 +76,8 @@ public class PlayerController : MonoBehaviour
             {
                 pickupObj = interactHit.collider.gameObject;
             }
+            else
+                pickupObj = null;
         }
         else
             pickupObj = null;
@@ -166,6 +168,7 @@ public class PlayerController : MonoBehaviour
             if(currentWeapon && currentWeapon.ammo < currentWeapon.maxAmmo)
             {
                 int ammoFill = currentWeapon.maxAmmo - currentWeapon.ammo;
+
                 if (ammoFill < currentWeapon.ammoRefill)
                 {
                     currentWeapon.ammo += ammoFill;
@@ -174,6 +177,7 @@ public class PlayerController : MonoBehaviour
                 {
                     currentWeapon.ammo += currentWeapon.ammoRefill;
                 }
+
                 Destroy(collision.gameObject);
             }
         }
@@ -182,6 +186,18 @@ public class PlayerController : MonoBehaviour
         {
             if (hazardDamage)
                 StartCoroutine("damageCooldown");
+        }
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Hazard")
+        {
+            if (hazardDamage)
+            {
+                StopCoroutine("damageCooldown");
+                hazardDamage = false;
+            }
         }
     }
 
