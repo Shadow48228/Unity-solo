@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public bool hazardDamage = false;
 
     public int health = 5;
+    public int maxHealth = 5;
     public float speed = 5;
     public float jumpHeight = 2.5f;
     public float jumpDetectDistance = 1.1f;
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
         jumpRay = new Ray(transform.position, -transform.up);
         interactRay = new Ray(playerCam.transform.position, playerCam.transform.forward);
 
-        weaponSlot = transform.GetChild(0);
+        weaponSlot = playerCam.transform.GetChild(0);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
