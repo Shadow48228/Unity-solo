@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
     public void Reload()
     {
         if (currentWeapon)
-            if (currentWeapon.reloading) // fix this
+            if (!currentWeapon.reloading)
                 currentWeapon.reload();
 
     }
