@@ -1,0 +1,4 @@
+public class BossEnemy : Enemy
+{
+
+}

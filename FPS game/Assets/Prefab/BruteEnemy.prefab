@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3136105014656147703
+--- !u!1 &6914640169610256931
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1926136763709683502}
-  - component: {fileID: 8306904881801525884}
-  - component: {fileID: 2620013023738143060}
-  - component: {fileID: 133926194213398647}
-  - component: {fileID: 5013452034227896439}
-  - component: {fileID: 6799733548367765942}
+  - component: {fileID: 2065726591008736632}
+  - component: {fileID: 4523013778486563280}
+  - component: {fileID: 574700264385537818}
+  - component: {fileID: 7931002333988513177}
+  - component: {fileID: 8388117008667744090}
+  - component: {fileID: 5067501781869876859}
   m_Layer: 0
-  m_Name: basic enemy
+  m_Name: BruteEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1926136763709683502
+--- !u!4 &2065726591008736632
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136105014656147703}
+  m_GameObject: {fileID: 6914640169610256931}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1193.51, y: 3.07, z: -709.21}
-  m_LocalScale: {x: 0.6661974, y: 1.7786076, z: 0.7363961}
+  m_LocalPosition: {x: -1190.4167, y: 2.71, z: -744.31}
+  m_LocalScale: {x: 1.3231, y: 3.9358907, z: 2.2507286}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8306904881801525884
+--- !u!33 &4523013778486563280
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136105014656147703}
+  m_GameObject: {fileID: 6914640169610256931}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2620013023738143060
+--- !u!23 &574700264385537818
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136105014656147703}
+  m_GameObject: {fileID: 6914640169610256931}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -93,13 +93,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &133926194213398647
+--- !u!65 &7931002333988513177
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136105014656147703}
+  m_GameObject: {fileID: 6914640169610256931}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -114,43 +114,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &5013452034227896439
+--- !u!195 &8388117008667744090
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136105014656147703}
+  m_GameObject: {fileID: 6914640169610256931}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 4.5
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 10
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0.5
+  m_BaseOffset: 0.49999997
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6799733548367765942
+--- !u!114 &5067501781869876859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136105014656147703}
+  m_GameObject: {fileID: 6914640169610256931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1464e9ae83aac894eabca8c5c80d7ae3, type: 3}
+  m_Script: {fileID: 11500000, guid: 88495d9e07328904789006b429022129, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasicEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::BruteEnemy
   isFollowing: 0
-  health: 50
-  maxHealth: 50
-  detectionRange: 25
+  health: 70
+  maxHealth: 70
+  detectionRange: 50
   player: {fileID: 0}
   agent: {fileID: 0}
