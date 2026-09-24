@@ -1,4 +1,4 @@
 public class AssassinEnemy : Enemy
 {
-
+    
 }

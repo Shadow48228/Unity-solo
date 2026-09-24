@@ -8,12 +8,12 @@ public class PlayerController : MonoBehaviour
     public bool isAttacking = false;
     public bool hazardDamage = false;
 
-    public int health = 5;
-    public int maxHealth = 5;
-    public float speed = 5;
+    public int health = 100;
+    public int maxHealth = 100;
+    public float speed = 10;
     public float jumpHeight = 2.5f;
     public float jumpDetectDistance = 1.1f;
-    public float interactDistance = 6f;
+    public float interactDistance = 10f;
     public float hazardCooldown = 3f;
 
     PlayerInput playerInput;
@@ -162,6 +162,7 @@ public class PlayerController : MonoBehaviour
             currentWeapon.unequip();
     }
 
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Ammo")
@@ -188,6 +189,22 @@ public class PlayerController : MonoBehaviour
             if (hazardDamage)
                 StartCoroutine("damageCooldown");
         }
+
+        if (collision.gameObject.tag == "ARBullet")
+        {
+            //health -- 10; //fix this
+        }
+
+        if (collision.gameObject.tag == "MinigunBullet")
+        {
+
+        }
+
+        if (collision.gameObject.tag == "BossBullet")
+        {
+
+        }
+
     }
 
     public void OnCollisionExit(Collision collision)
