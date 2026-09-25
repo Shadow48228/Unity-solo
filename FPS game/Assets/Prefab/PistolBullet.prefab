@@ -153,3 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa1dc9fe5fde74489577a4887f69c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PistolBullet
+  damage: 13

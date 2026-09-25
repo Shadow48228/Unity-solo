@@ -385,8 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5424e51f5fc3c8439de26c976cb5a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AR
-  projectile: {fileID: 0}
-  firePoint: {fileID: 0}
+  projectile: {fileID: 405727791559951628, guid: 87e255dd0d27b40418d619a072923b89, type: 3}
+  firePoint: {fileID: 1742765732}
   firingDirection: {fileID: 0}
   canFire: 1
   holdToAttack: 1
@@ -396,7 +396,7 @@ MonoBehaviour:
   projLifespan: 10
   projVelocity: 150
   reloadCooldown: 2
-  rof: 0.3
+  rof: 0.5
   fireModes: 0
   currentFiremode: 0
   clip: 0
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   projLifespan: 5
   projVelocity: 100
   reloadCooldown: 1
-  rof: 0.5
+  rof: 1
   fireModes: 0
   currentFiremode: 0
   clip: 0
@@ -4602,8 +4602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   isAttacking: 0
-  hazardDamage: 0
-  health: 100
+  hazardDamage: 1
+  health: 1
   maxHealth: 100
   speed: 10
   jumpHeight: 2.5
@@ -4767,10 +4767,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PistolBullet
       objectReference: {fileID: 0}
-    - target: {fileID: 405727791559951628, guid: 17c4ff7e684c0c7448574d73c63c2545, type: 3}
-      propertyPath: m_TagString
-      value: PistolBullet
-      objectReference: {fileID: 0}
     - target: {fileID: 804529936873377955, guid: 17c4ff7e684c0c7448574d73c63c2545, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1176.61
@@ -4826,10 +4822,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 405727791559951628, guid: 87e255dd0d27b40418d619a072923b89, type: 3}
       propertyPath: m_Name
-      value: ARBullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 405727791559951628, guid: 87e255dd0d27b40418d619a072923b89, type: 3}
-      propertyPath: m_TagString
       value: ARBullet
       objectReference: {fileID: 0}
     - target: {fileID: 804529936873377955, guid: 87e255dd0d27b40418d619a072923b89, type: 3}
@@ -4946,10 +4938,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossBullet
       objectReference: {fileID: 0}
-    - target: {fileID: 405727791559951628, guid: a8a8192bc069bb9499bac558a1448084, type: 3}
-      propertyPath: m_TagString
-      value: BossBullet
-      objectReference: {fileID: 0}
     - target: {fileID: 804529936873377955, guid: a8a8192bc069bb9499bac558a1448084, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1176.6842
@@ -5005,10 +4993,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 405727791559951628, guid: f3ed794b6e7557e4c968ad01d6a9238d, type: 3}
       propertyPath: m_Name
-      value: MinigunBullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 405727791559951628, guid: f3ed794b6e7557e4c968ad01d6a9238d, type: 3}
-      propertyPath: m_TagString
       value: MinigunBullet
       objectReference: {fileID: 0}
     - target: {fileID: 804529936873377955, guid: f3ed794b6e7557e4c968ad01d6a9238d, type: 3}

@@ -59,11 +59,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //die
-        if(health <= 0)
-        {
-
-        }
 
         jumpRay.origin = transform.position;
         jumpRay.direction = -transform.up;
@@ -161,7 +156,7 @@ public class PlayerController : MonoBehaviour
         if (currentWeapon)
             currentWeapon.unequip();
     }
-
+   
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -230,4 +225,23 @@ public class PlayerController : MonoBehaviour
 
     }
 
+ /* public class HealthController : MonoBehaviour, IDamageable
+    {
+        public float currentHealth = 100f;
+
+        public void TakeDamage(float damageAmount)
+        {
+            currentHealth -= damageAmount;
+
+            if (currentHealth <= 0f)
+            {
+                Die();
+            }
+        }
+
+        void Die()
+        {
+            Destroy(gameObject);
+        }
+    } */
 }

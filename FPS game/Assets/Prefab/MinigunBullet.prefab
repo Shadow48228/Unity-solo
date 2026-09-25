@@ -153,3 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95580bbb83899f04194a8899a8897552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigunBullet
+  damage: 5

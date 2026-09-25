@@ -1,6 +1,7 @@
 using Unity.Hierarchy;
 using UnityEngine;
 using UnityEngine.AI;
+//using static NewMonoBehaviourScript;
 public class Enemy : MonoBehaviour
 {
     public bool isFollowing = false;
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "ARBullet")
         {
-            
+          //health -= 13health;
         }
 
 
@@ -46,4 +47,24 @@ public class Enemy : MonoBehaviour
 
         }
     }
+
+  /*public class HealthController : MonoBehaviour, IDamageable
+    {
+        public float health = 100f;
+
+        public void TakeDamage(float damageAmount)
+        {
+            health -= damageAmount;
+
+            if (health <= 0f)
+            {
+                Die();
+            }
+        }
+
+        void Die()
+        {
+            Destroy(gameObject);
+        }
+    }*/
 }

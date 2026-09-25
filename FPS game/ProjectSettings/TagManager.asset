@@ -12,6 +12,7 @@ TagManager:
   - MinigunBullet
   - ARBullet
   - EnemyWeapon
+  - Hazard
   layers:
   - Default
   - TransparentFX

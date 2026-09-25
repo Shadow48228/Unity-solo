@@ -153,3 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55bf3454fe96ec0478db04c79cdc4a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ARBullet
+  damage: 16
