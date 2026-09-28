@@ -11,7 +11,7 @@ public class EnemyWeapon : MonoBehaviour
 
     [Header("Meta Attributes")]
     public bool canFire = true;
-    public bool holdToAttack = true;
+    public bool holdToAttack = true; // fix
     public bool reloading = false;
 
     [Header("Weapon Stats")]
