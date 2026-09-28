@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour
 {/*
-    PlayerController player;
+    PlayerController player; //fix
 
     public GameObject projectile;
     public Transform firePoint;
