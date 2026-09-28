@@ -1,20 +1,18 @@
- using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour
-{ /*
-    Enemy enemy;
+{/*
+    PlayerController player;
 
     public GameObject projectile;
     public Transform firePoint;
-    public Camera firingDirection; //fix this
+    public Camera firingDirection; //change
 
     [Header("Meta Attributes")]
     public bool canFire = true;
     public bool holdToAttack = true;
     public bool reloading = false;
-    public int weaponID;
-    public string weaponName;
 
     [Header("Weapon Stats")]
     public float projLifespan;
@@ -34,30 +32,41 @@ public class EnemyWeapon : MonoBehaviour
     void Start()
     {
         firePoint = transform.GetChild(0);
-        firingDirection = Camera.main;
+        firingDirection = Camera.main; // fix
     }
-    
-    // Find a way to make this not PlayerController and make it for enemy.
-    public void equip(PlayerController e)
+
+    public void equip(PlayerController p) // fix
     {
-        enemy = e;
+        player = p;
 
-        enemy.currentWeapon = this;
+        player.currentWeapon = this; //fix
 
-        transform.SetPositionAndRotation(enemy.weaponSlot.position, enemy.weaponSlot.rotation);
-        transform.SetParent(enemy.weaponSlot);
+        transform.SetPositionAndRotation(player.weaponSlot.position, player.weaponSlot.rotation); // fix
+        transform.SetParent(player.weaponSlot); //fix
 
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Collider>().isTrigger = true;
+    }
+
+    public void unequip()
+    {
+        player.currentWeapon = null; //fix
+
+        transform.SetParent(null);
+
+        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Collider>().isTrigger = false;
+
+        this.player = null; //fix
     }
 
     public void fire()
     {
         if (canFire && !reloading && clip > 0)
         {
-            GameObject e = Instantiate(projectile, firePoint.position, firePoint.rotation);
-            p.GetComponent<Rigidbody>().AddForce(firingDirection.transform.forward * projVelocity);
-            Destroy(e, projLifespan);
+            GameObject p = Instantiate(projectile, firePoint.position, firePoint.rotation); //fix
+            p.GetComponent<Rigidbody>().AddForce(firingDirection.transform.forward * projVelocity); //fix
+            Destroy(p, projLifespan); //fix
             canFire = false;
             clip--;
             StartCoroutine("cooldownFire");
@@ -89,7 +98,6 @@ public class EnemyWeapon : MonoBehaviour
         StartCoroutine("reloadingCooldown");
     }
 
-  
     IEnumerator cooldownFire()
     {
         yield return new WaitForSeconds(rof);
@@ -104,6 +112,5 @@ public class EnemyWeapon : MonoBehaviour
 
         reloading = false;
         canFire = true;
-    }
-    */
+    }*/
 }

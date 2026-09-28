@@ -187,17 +187,22 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "ARBullet")
         {
-            //health -- 10; //fix this
+            health -= 16; 
         }
 
         if (collision.gameObject.tag == "MinigunBullet")
         {
-
+            health -= 5;
         }
 
         if (collision.gameObject.tag == "BossBullet")
         {
+            health -= 25;
+        }
 
+        if (health <= 0f)
+        {
+            Destroy(gameObject);
         }
 
     }
@@ -224,24 +229,4 @@ public class PlayerController : MonoBehaviour
         hazardDamage = false;
 
     }
-
- /* public class HealthController : MonoBehaviour, IDamageable
-    {
-        public float currentHealth = 100f;
-
-        public void TakeDamage(float damageAmount)
-        {
-            currentHealth -= damageAmount;
-
-            if (currentHealth <= 0f)
-            {
-                Die();
-            }
-        }
-
-        void Die()
-        {
-            Destroy(gameObject);
-        }
-    } */
 }

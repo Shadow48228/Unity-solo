@@ -1,4 +1,3 @@
-using Unity.Hierarchy;
 using UnityEngine;
 using UnityEngine.AI;
 //using static NewMonoBehaviourScript;
@@ -38,33 +37,18 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "ARBullet")
         {
-          //health -= 13health;
+            health -= 16;
         }
 
 
         if (collision.gameObject.tag == "PistolBullet")
         {
-
-        }
-    }
-
-  /*public class HealthController : MonoBehaviour, IDamageable
-    {
-        public float health = 100f;
-
-        public void TakeDamage(float damageAmount)
-        {
-            health -= damageAmount;
-
-            if (health <= 0f)
-            {
-                Die();
-            }
+            health -= 13;
         }
 
-        void Die()
+        if (health <= 0f)
         {
             Destroy(gameObject);
         }
-    }*/
+    }
 }
