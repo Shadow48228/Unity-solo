@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
 
     public PlayerController player;
     public NavMeshAgent agent;
+    internal EnemyWeapon currentWeapon; // part of test
+    internal object weaponSlot; // part of test
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

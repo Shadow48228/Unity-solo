@@ -1,9 +1,9 @@
 using System.Collections;
-using UnityEngine; //test script
+using UnityEngine;
 
-public class EnemyWeapon : MonoBehaviour
-{
-    Enemy enemy;
+//public class EnemyWeapon : MonoBehaviour
+{/*
+    PlayerController player; //fix
 
     public GameObject projectile;
     public Transform firePoint;
@@ -26,7 +26,6 @@ public class EnemyWeapon : MonoBehaviour
     public int ammo;
     public int maxAmmo;
     public int ammoRefill;
-    private Enemy e;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,24 +37,36 @@ public class EnemyWeapon : MonoBehaviour
 
     public void equip(PlayerController p) // fix
     {
-        enemy = e;
+        player = p;
 
-        enemy.currentWeapon = this; //fix
+        player.currentWeapon = this; //fix
 
-        transform.SetPositionAndRotation(enemy.weaponSlot.position, enemy.weaponSlot.rotation); // fix
-        transform.SetParent((Transform)enemy.weaponSlot); //fix
+        transform.SetPositionAndRotation(player.weaponSlot.position, player.weaponSlot.rotation); // fix
+        transform.SetParent(player.weaponSlot); //fix
 
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Collider>().isTrigger = true;
+    }
+
+    public void unequip()
+    {
+        player.currentWeapon = null; //fix
+
+        transform.SetParent(null);
+
+        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Collider>().isTrigger = false;
+
+        this.player = null; //fix
     }
 
     public void fire()
     {
         if (canFire && !reloading && clip > 0)
         {
-            GameObject e = Instantiate(projectile, firePoint.position, firePoint.rotation); 
-            e.GetComponent<Rigidbody>().AddForce(firingDirection.transform.forward * projVelocity); 
-            Destroy(e, projLifespan); 
+            GameObject p = Instantiate(projectile, firePoint.position, firePoint.rotation); //fix
+            p.GetComponent<Rigidbody>().AddForce(firingDirection.transform.forward * projVelocity); //fix
+            Destroy(p, projLifespan); //fix
             canFire = false;
             clip--;
             StartCoroutine("cooldownFire");
@@ -101,5 +112,5 @@ public class EnemyWeapon : MonoBehaviour
 
         reloading = false;
         canFire = true;
-    }
+    }*/
 }
