@@ -1,8 +1,8 @@
-using System.Collections;
+/*using System.Collections;
 using UnityEngine;
 
 //public class EnemyWeapon : MonoBehaviour
-{/*
+{
     PlayerController player; //fix
 
     public GameObject projectile;
@@ -112,5 +112,5 @@ using UnityEngine;
 
         reloading = false;
         canFire = true;
-    }*/
-}
+    }
+}*/

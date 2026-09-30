@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 4140127596693229721}
   - component: {fileID: 5484832708753956347}
   - component: {fileID: 8453727681451220834}
-  - component: {fileID: 7257931712738280921}
   - component: {fileID: 4432417301222090384}
   m_Layer: 0
   m_Name: MiniGun
@@ -62,7 +61,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1203.611, y: 1.308, z: -732.58}
-  m_LocalScale: {x: 0.14748465, y: 0.15081397, z: 1.3914324}
+  m_LocalScale: {x: 0.24153794, y: 0.20775127, z: 2.1134467}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1725493394397023377}
@@ -146,33 +145,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7257931712738280921
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8622735050043805252}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &4432417301222090384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +157,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bb12bd0bbcb746ae01250848128f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Minigun
+  projectile: {fileID: 0}
+  firePoint: {fileID: 0}
+  firingDirection: {fileID: 0}
+  canFire: 1
+  holdToAttack: 1
+  reloading: 0
+  projLifespan: 0
+  projVelocity: 0
+  reloadCooldown: 0
+  rof: 0
+  clip: 0
+  clipSize: 0
+  ammo: 0
+  maxAmmo: 0
+  ammoRefill: 0

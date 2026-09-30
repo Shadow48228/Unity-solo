@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3121153517075675365}
   - component: {fileID: 2289464121543107353}
   - component: {fileID: 2697611085983663141}
-  - component: {fileID: 5420594770384694444}
   - component: {fileID: 4295667053332937302}
   m_Layer: 0
   m_Name: EnemyAR
@@ -115,33 +114,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5420594770384694444
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5910006313236182348}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &4295667053332937302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +126,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683dd7413c105ed4ba463c5e9ece248c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAR
+  projectile: {fileID: 0}
+  firePoint: {fileID: 0}
+  firingDirection: {fileID: 0}
+  canFire: 1
+  holdToAttack: 1
+  reloading: 0
+  projLifespan: 0
+  projVelocity: 0
+  reloadCooldown: 0
+  rof: 0
+  clip: 0
+  clipSize: 0
+  ammo: 0
+  maxAmmo: 0
+  ammoRefill: 0
 --- !u!1 &8570233668868587424
 GameObject:
   m_ObjectHideFlags: 0

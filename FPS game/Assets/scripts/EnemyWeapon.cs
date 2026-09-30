@@ -3,11 +3,11 @@ using UnityEngine; //test script
 
 public class EnemyWeapon : MonoBehaviour
 {
-    Enemy enemy;
+    private readonly Enemy enemy;
 
     public GameObject projectile;
     public Transform firePoint;
-    public Camera firingDirection; //change
+    public Enemy firingDirection; 
 
     [Header("Meta Attributes")]
     public bool canFire = true;
@@ -26,28 +26,28 @@ public class EnemyWeapon : MonoBehaviour
     public int ammo;
     public int maxAmmo;
     public int ammoRefill;
-    private Enemy e;
+    private readonly Enemy e;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         firePoint = transform.GetChild(0);
-        firingDirection = Camera.main; // fix
+        firingDirection = Enemy.main;
     }
 
-    public void equip(PlayerController p) // fix
+    /*public void equip(Enemy e) 
     {
         enemy = e;
 
-        enemy.currentWeapon = this; //fix
+        enemy.currentWeapon = this; 
 
         transform.SetPositionAndRotation(enemy.weaponSlot.position, enemy.weaponSlot.rotation); // fix
-        transform.SetParent((Transform)enemy.weaponSlot); //fix
+        transform.SetParent((Transform)enemy.weaponSlot); 
 
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Collider>().isTrigger = true;
-    }
+    }*/
 
     public void fire()
     {

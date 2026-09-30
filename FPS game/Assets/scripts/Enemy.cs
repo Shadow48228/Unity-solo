@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 //using static NewMonoBehaviourScript;
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent agent;
     internal EnemyWeapon currentWeapon; // part of test
     internal object weaponSlot; // part of test
+    internal static Enemy main;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,17 +42,24 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "ARBullet")
         {
             health -= 16;
+            Destroy(gameObject.tag == "ArBullet"); // aa
         }
 
 
         if (collision.gameObject.tag == "PistolBullet")
         {
             health -= 13;
+            Destroy(gameObject.tag == "PistolBullet"); // aa
         }
 
         if (health <= 0f)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Destroy(bool v) // aa
+    {
+        throw new NotImplementedException();
     }
 }

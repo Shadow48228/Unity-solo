@@ -5,16 +5,30 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 
 {
+    public bool sprinting = false;
     public bool isAttacking = false;
     public bool hazardDamage = false;
+    public bool canSprint = true;
+    public bool toggleSprint = true;
+    public bool sprintStop = false;
+    public bool staminaStop = false;
+    public bool regenStamina = false;
 
     public int health = 100;
     public int maxHealth = 100;
+
     public float speed = 10;
     public float jumpHeight = 2.5f;
     public float jumpDetectDistance = 1.1f;
     public float interactDistance = 10f;
     public float hazardCooldown = 3f;
+    public float sprintBoost = 2.0f;
+    public float stamina = 100f;
+    public float maxStamina = 100f;
+    public float sprintCost = .1f;
+    public float sprintCooldown = 2;
+    public float staminaRegen = 5;
+    public float staminaCooldown = 2;
 
     PlayerInput playerInput;
     Rigidbody rb;
@@ -88,6 +102,49 @@ public class PlayerController : MonoBehaviour
         tempMove.x = (moveInput.x * speed);
         tempMove.z = (moveInput.y * speed);
 
+        if (sprinting)
+        {
+            if (moveInput.y == 1)
+            {
+                tempMove.z = (moveInput.y += sprintBoost);
+
+                stamina -= sprintCost * Time.deltaTime;
+
+                if (stamina < 0)
+                    stamina = 0;
+
+                StopCoroutine("staminaReset");
+            }
+            else
+            {
+                canSprint = false;
+                sprinting = false;
+
+            }
+        }
+
+        if (!sprinting)
+        {
+            if (!regenStamina && !staminaStop && stamina < maxStamina)
+            {
+                StartCoroutine("staminaReset");
+            }
+            if (!canSprint && !sprintStop)
+            {
+                StartCoroutine("sprintReset");
+            }
+            if (regenStamina)
+            {
+                stamina += staminaRegen * Time.deltaTime;
+
+                if (stamina >= maxStamina)
+                {
+                    stamina = maxStamina;
+                    regenStamina = false;
+                }
+            }
+        }
+
         rb.linearVelocity = (tempMove.x * transform.right) +
                             (tempMove.y * transform.up) +
                             (tempMove.z * transform.forward);
@@ -103,7 +160,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if (Physics.Raycast(jumpRay, jumpDetectDistance)) 
+        if (Physics.Raycast(jumpRay, jumpDetectDistance))
         {
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
         }
@@ -137,7 +194,7 @@ public class PlayerController : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        if(context.ReadValueAsButton())
+        if (context.ReadValueAsButton())
         {
             if (pickupObj)
             {
@@ -156,13 +213,13 @@ public class PlayerController : MonoBehaviour
         if (currentWeapon)
             currentWeapon.unequip();
     }
-   
+
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Ammo")
+        if (collision.gameObject.tag == "Ammo")
         {
-            if(currentWeapon && currentWeapon.ammo < currentWeapon.maxAmmo)
+            if (currentWeapon && currentWeapon.ammo < currentWeapon.maxAmmo)
             {
                 int ammoFill = currentWeapon.maxAmmo - currentWeapon.ammo;
 
@@ -187,7 +244,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "ARBullet")
         {
-            health -= 16; 
+            health -= 16;
         }
 
         if (collision.gameObject.tag == "MinigunBullet")
@@ -228,5 +285,43 @@ public class PlayerController : MonoBehaviour
         health--;
         hazardDamage = false;
 
+    }
+
+    public void Sprint(InputAction.CallbackContext context)
+    {
+        if (canSprint)
+        {
+            if (toggleSprint)
+            {
+                sprinting = !sprinting;
+            }
+            else if (!toggleSprint)
+            {
+                sprinting = context.ReadValueAsButton();
+
+                if (!sprinting)
+                    canSprint = false;
+            }
+        }
+    }
+
+    IEnumerator sprintReset()
+    {
+        sprintStop = true;
+
+        yield return new WaitForSeconds(sprintCooldown);
+
+        canSprint = true;
+        sprintStop = false;
+    }
+
+    IEnumerator staminaReset()
+    {
+        staminaStop = true;
+
+        yield return new WaitForSeconds(staminaCooldown);
+
+        regenStamina = true;
+        staminaStop = false;
     }
 }
