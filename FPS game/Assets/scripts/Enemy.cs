@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     internal EnemyWeapon currentWeapon; // part of test
     internal object weaponSlot; // part of test
     internal static Enemy main;
+    public Transform enemyWeaponSlot; //part of test
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

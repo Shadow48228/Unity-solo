@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6004797651609159657}
   m_Layer: 0
-  m_Name: WeaponSlot (1)
+  m_Name: 'enemyWeaponSlot '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

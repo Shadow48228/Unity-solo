@@ -29,6 +29,7 @@ public class EnemyWeapon : MonoBehaviour
     private readonly Enemy e;
 
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,18 +37,6 @@ public class EnemyWeapon : MonoBehaviour
         firingDirection = Enemy.main;
     }
 
-    /*public void equip(Enemy e) 
-    {
-        enemy = e;
-
-        enemy.currentWeapon = this; 
-
-        transform.SetPositionAndRotation(enemy.weaponSlot.position, enemy.weaponSlot.rotation); // fix
-        transform.SetParent((Transform)enemy.weaponSlot); 
-
-        GetComponent<Rigidbody>().isKinematic = true;
-        GetComponent<Collider>().isTrigger = true;
-    }*/
 
     public void fire()
     {

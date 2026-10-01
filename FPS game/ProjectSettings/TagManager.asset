@@ -13,6 +13,8 @@ TagManager:
   - ARBullet
   - EnemyWeapon
   - Hazard
+  - Pause
+  - GameEnd
   layers:
   - Default
   - TransparentFX

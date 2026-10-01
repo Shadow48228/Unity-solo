@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -192,6 +193,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /*public void ChangeFireMode() //for fire modes
+    {
+        if(currentWeapon)
+        {
+            if(currentWeapon.fireModes >=2)
+            {
+                if(currentWeapon.weaponID == 1)
+                {
+                    currentWeapon.GetComponent<AR>().ChangeFireMode;
+                }
+            }
+        }
+    }*/
+
     public void Interact(InputAction.CallbackContext context)
     {
         if (context.ReadValueAsButton())
@@ -263,6 +278,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 
     public void OnCollisionExit(Collision collision)
     {
