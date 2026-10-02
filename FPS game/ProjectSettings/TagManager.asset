@@ -16,6 +16,10 @@ TagManager:
   - Pause
   - GameEnd
   - spike
+  - medkit
+  - armorT1
+  - armorT2
+  - armorT3
   layers:
   - Default
   - TransparentFX

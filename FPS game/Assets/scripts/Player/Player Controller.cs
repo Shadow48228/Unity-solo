@@ -286,14 +286,47 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
-            
+
+        if (collision.gameObject.tag == "armorT1")
+        {
+            health += 10;
+            maxHealth += 10;
+
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "armorT2")
+        {
+            maxHealth += 25;
+
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "armorT3")
+        {
+            maxHealth += 50;
+
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "medkit")
+        {
+            health = maxHealth;
+
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "-50")
+        {
+            health -= 20;
+        }
     }
 
-        void Die()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    
+    void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
 
     public void OnCollisionExit(Collision collision)

@@ -37,7 +37,6 @@ public class EnemyWeapon : MonoBehaviour
         firingDirection = Enemy.main;
     }
 
-
     public void Fire()
     {
         if (canFire && !reloading && clip > 0)
