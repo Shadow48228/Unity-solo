@@ -38,7 +38,7 @@ public class EnemyWeapon : MonoBehaviour
     }
 
 
-    public void fire()
+    public void Fire()
     {
         if (canFire && !reloading && clip > 0)
         {
@@ -47,11 +47,11 @@ public class EnemyWeapon : MonoBehaviour
             Destroy(e, projLifespan); 
             canFire = false;
             clip--;
-            StartCoroutine("cooldownFire");
+            StartCoroutine(nameof(CooldownFire));
         }
     }
 
-    public void reload()
+    public void Reload()
     {
         if (clip >= clipSize)
             return;
@@ -73,10 +73,10 @@ public class EnemyWeapon : MonoBehaviour
             ammo -= reloadCount;
         }
 
-        StartCoroutine("reloadingCooldown");
+        StartCoroutine(nameof(ReloadingCooldown));
     }
 
-    IEnumerator cooldownFire()
+    IEnumerator CooldownFire()
     {
         yield return new WaitForSeconds(rof);
 
@@ -84,7 +84,7 @@ public class EnemyWeapon : MonoBehaviour
             canFire = true;
     }
 
-    IEnumerator reloadingCooldown()
+    IEnumerator ReloadingCooldown()
     {
         yield return new WaitForSeconds(reloadCooldown);
 

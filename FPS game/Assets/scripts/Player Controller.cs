@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 
@@ -74,6 +75,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0f)
+        {
+            Die();
+        }
 
         jumpRay.origin = transform.position;
         jumpRay.direction = -transform.up;
@@ -274,10 +279,21 @@ public class PlayerController : MonoBehaviour
 
         if (health <= 0f)
         {
-            Destroy(gameObject);
+            Die();
         }
 
+        if (collision.gameObject.tag == "spike")
+        {
+            Die();
+        }
+            
     }
+
+        void Die()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    
 
 
     public void OnCollisionExit(Collision collision)

@@ -15,6 +15,7 @@ TagManager:
   - Hazard
   - Pause
   - GameEnd
+  - spike
   layers:
   - Default
   - TransparentFX

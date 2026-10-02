@@ -23,6 +23,13 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         agent = GetComponent<NavMeshAgent>();
+
+        enemyWeaponSlot = Enemy.GetChild(0);
+    }
+
+    private static Transform GetChild(int v)
+    {
+        throw new NotImplementedException();
     }
 
     // Update is called once per frame

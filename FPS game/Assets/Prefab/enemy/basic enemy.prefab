@@ -187,6 +187,7 @@ MonoBehaviour:
   detectionRange: 25
   player: {fileID: 0}
   agent: {fileID: 0}
+  enemyWeaponSlot: {fileID: 4494492221669033627}
 --- !u!1001 &2537128202901374268
 PrefabInstance:
   m_ObjectHideFlags: 0
