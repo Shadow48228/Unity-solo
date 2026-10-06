@@ -13,6 +13,6 @@ public class MinigunBullet : MonoBehaviour
             damageable.TakeDamage(damage);
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject, 20f);
     }
 }

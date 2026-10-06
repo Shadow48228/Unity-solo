@@ -1,4 +1,4 @@
-public class Minigun : EnemyWeapon
+public class Minigun : Enemy
 {
 
 }

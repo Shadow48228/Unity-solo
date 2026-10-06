@@ -1,4 +1,4 @@
-public class EnemyAR : EnemyWeapon
+public class EnemyAR : Enemy
 {
 
 }

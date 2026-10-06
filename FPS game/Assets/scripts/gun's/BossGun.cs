@@ -1,4 +1,4 @@
-public class BossGun : EnemyWeapon
-{
+public class BossGun : Enemy
+{ 
 
 }

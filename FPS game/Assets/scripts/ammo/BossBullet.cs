@@ -13,6 +13,6 @@ public class BossBullet : MonoBehaviour
             damageable.TakeDamage(damage);
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject, 30f);
     }
 }

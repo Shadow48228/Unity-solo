@@ -12,7 +12,7 @@ public class ARBullet : MonoBehaviour
         {
             damageable.TakeDamage(damage);
         }
-
-        Destroy(gameObject);
+        
+        Destroy(gameObject, 10f);
     }
 }

@@ -297,6 +297,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "armorT2")
         {
+            health += 25;
             maxHealth += 25;
 
             Destroy(collision.gameObject);
@@ -304,6 +305,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "armorT3")
         {
+            health += 50;
             maxHealth += 50;
 
             Destroy(collision.gameObject);
