@@ -150,15 +150,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49260a101e0b704e81450b98e454548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestEnemy
-  player: {fileID: 0}
+  player: {fileID: 5087817005195234514, guid: 56f7cc37c084a9544be34089574c0f45, type: 3}
   bulletPrefab: {fileID: 405727791559951628, guid: 87e255dd0d27b40418d619a072923b89, type: 3}
   firePoint: {fileID: 1234988950461093823}
   shootingRange: 10
-  fireRate: 0.5
-  maxAmmo: 10
+  fireRate: 0.75
+  maxAmmo: 30
   reloadTime: 2
   isFollowing: 0
-  detectionRange: 50
+  detectionRange: 30
   agent: {fileID: 0}
   health: 100
   maxHealth: 100

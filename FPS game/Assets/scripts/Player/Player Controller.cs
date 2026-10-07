@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -275,6 +276,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "BossBullet")
         {
             health -= 25;
+        }
+
+        if (collision.gameObject.tag == "PistolBullet")
+        {
+            health -= 13;
         }
 
         if (health <= 0f)
