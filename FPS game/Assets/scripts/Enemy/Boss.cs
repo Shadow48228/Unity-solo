@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Boss : MonoBehaviour
 {
     [Header("References")]
     public Transform player;
@@ -11,10 +11,15 @@ public class Enemy : MonoBehaviour
     public Transform firePoint;
 
     [Header("Combat Settings")]
-    public float shootingRange = 10f;
-    public float fireRate = 0.5f;       
-    public int maxAmmo = 10;            
-    public float reloadTime = 2.0f;
+    public float shootingRange = 100f;
+    public float fireRate = 1f;
+    public int maxAmmo = 100;
+    public float reloadTime = 2f;
+
+    [Header("Enemy Spawner Settings")]
+    public GameObject enemyPrefab;
+    public Transform[] spawnPoints;
+    public float spawnInterval = 30f;
 
     private int currentAmmo;
     private float nextFireTime;
@@ -22,12 +27,15 @@ public class Enemy : MonoBehaviour
 
     public bool isFollowing = false;
 
-    public float detectionRange = 50;
+    public float detectionRange = 100;
 
     public NavMeshAgent agent;
 
-    public int health = 100;
-    public int maxHealth = 100;
+    public int health = 500;
+    public int maxHealth = 500;
+
+    private Coroutine SpawnCoroutine;
+    private bool isCoroutineRunning = false;
 
     void Start()
     {
@@ -67,6 +75,48 @@ public class Enemy : MonoBehaviour
         {
             agent.destination = player.transform.position;
         }
+
+
+        if (targetDistance <= shootingRange)
+        {
+            if (!isCoroutineRunning)
+            {
+                SpawnCoroutine = StartCoroutine(SpawnEnemiesRoutine());
+            }
+        }
+        else
+        {
+            if (isCoroutineRunning)
+            {
+                StopCoroutine(SpawnCoroutine);
+                isCoroutineRunning = false;
+            }
+        }
+    }
+
+    IEnumerator SpawnEnemiesRoutine()
+    {
+        while (health > 0)
+        {
+            yield return new WaitForSeconds(spawnInterval);
+            SpawnEnemy();
+        }
+    }
+
+    void SpawnEnemy()
+    {
+        if (enemyPrefab == null) return;
+
+        Vector3 spawnPos = transform.position + UnityEngine.Random.insideUnitSphere * 3f;
+        spawnPos.y = transform.position.y;
+
+        if (spawnPoints != null && spawnPoints.Length > 0)
+        {
+            Transform sp = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+            spawnPos = sp.position;
+        }
+
+        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
     }
 
     void Shoot()
@@ -78,7 +128,7 @@ public class Enemy : MonoBehaviour
         Rigidbody rb = ARBullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.linearVelocity = firePoint.forward * 20f; 
+            rb.linearVelocity = firePoint.forward * 20f;
         }
     }
 

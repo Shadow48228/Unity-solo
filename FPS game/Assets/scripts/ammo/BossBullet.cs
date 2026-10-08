@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BossBullet : MonoBehaviour
 {
-    public float damage = 25f;
+    private float damage = 25;
 
     void OnCollisionEnter(Collision collision)
     {
