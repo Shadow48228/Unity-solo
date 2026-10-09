@@ -20,6 +20,7 @@ TagManager:
   - armorT1
   - armorT2
   - armorT3
+  - CannonBullet
   layers:
   - Default
   - TransparentFX

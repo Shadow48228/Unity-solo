@@ -8,11 +8,9 @@ public class PistolBullet : MonoBehaviour
     {
         IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
 
-        if (damageable != null)
+        if (collision.gameObject.tag == "Enemy")
         {
-            damageable.TakeDamage(damage);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }

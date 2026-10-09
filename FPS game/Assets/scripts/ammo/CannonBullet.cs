@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ARBullet : MonoBehaviour
+public class CannonBullet : MonoBehaviour
 {
-    public float damage = 16f;
+    public float damage = 20f;
 
     void OnCollisionEnter(Collision collision)
     {

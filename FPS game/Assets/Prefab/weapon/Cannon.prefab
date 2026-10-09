@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3048752715350724446
+--- !u!1 &872942071320939847
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1383661305132331394}
+  - component: {fileID: 1219176401295553897}
   m_Layer: 0
   m_Name: firePoint
   m_TagString: Untagged
@@ -16,22 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1383661305132331394
+--- !u!4 &1219176401295553897
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3048752715350724446}
+  m_GameObject: {fileID: 872942071320939847}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: -0.01, z: 0.511}
   m_LocalScale: {x: 5.658151, y: 6.6489944, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5476619235132372769}
+  m_Father: {fileID: 8509922104170285623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6406644385397137383
+--- !u!1 &1203980062300950661
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,50 +39,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5476619235132372769}
-  - component: {fileID: 1089242445261379032}
-  - component: {fileID: 7655649067294408154}
-  - component: {fileID: 900438834977472475}
-  - component: {fileID: 2074117969611890147}
-  - component: {fileID: 1509044994833691535}
+  - component: {fileID: 8509922104170285623}
+  - component: {fileID: 5689611367577613255}
+  - component: {fileID: 7372859096856369030}
+  - component: {fileID: 8488639511814902556}
+  - component: {fileID: 2587997173671806955}
+  - component: {fileID: 2313940583725017567}
   m_Layer: 0
-  m_Name: pistol
+  m_Name: Cannon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5476619235132372769
+--- !u!4 &8509922104170285623
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6406644385397137383}
+  m_GameObject: {fileID: 1203980062300950661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1207.02, y: 1.22, z: -732.58}
-  m_LocalScale: {x: 0.0858617, y: 0.08238049, z: 0.39024264}
+  m_LocalPosition: {x: -1206.269, y: 1.22, z: -732.58}
+  m_LocalScale: {x: 0.15556653, y: 0.1555292, z: 0.581271}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1383661305132331394}
+  - {fileID: 1219176401295553897}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1089242445261379032
+--- !u!33 &5689611367577613255
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6406644385397137383}
+  m_GameObject: {fileID: 1203980062300950661}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7655649067294408154
+--- !u!23 &7372859096856369030
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6406644385397137383}
+  m_GameObject: {fileID: 1203980062300950661}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
@@ -125,13 +125,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &900438834977472475
+--- !u!65 &8488639511814902556
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6406644385397137383}
+  m_GameObject: {fileID: 1203980062300950661}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -146,44 +146,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2074117969611890147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6406644385397137383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35cbb7c1dca707044ba6584bace7e002, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::pistol
-  projectile: {fileID: 405727791559951628, guid: 17c4ff7e684c0c7448574d73c63c2545, type: 3}
-  firePoint: {fileID: 1383661305132331394}
-  firingDirection: {fileID: 0}
-  canFire: 1
-  holdToAttack: 0
-  reloading: 0
-  weaponID: 1
-  weaponName: Pistol
-  projLifespan: 5
-  projVelocity: 100
-  reloadCooldown: 1
-  rof: 1
-  fireModes: 0
-  currentFiremode: 0
-  clip: 0
-  clipSize: 18
-  ammo: 0
-  maxAmmo: 100
-  ammoRefill: 18
---- !u!54 &1509044994833691535
+--- !u!54 &2587997173671806955
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6406644385397137383}
+  m_GameObject: {fileID: 1203980062300950661}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -204,3 +173,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2313940583725017567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203980062300950661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f93944076617b4a887ee8a77224979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cannon
+  projectile: {fileID: 5951312918904216313, guid: dc01f7f03a17118489d084e738424d2a, type: 3}
+  firePoint: {fileID: 1219176401295553897}
+  firingDirection: {fileID: 0}
+  canFire: 1
+  holdToAttack: 1
+  reloading: 0
+  weaponID: 0
+  weaponName: 
+  projLifespan: 20
+  projVelocity: 75
+  reloadCooldown: 3
+  rof: 2
+  fireModes: 0
+  currentFiremode: 0
+  clip: 0
+  clipSize: 3
+  ammo: 0
+  maxAmmo: 100
+  ammoRefill: 10

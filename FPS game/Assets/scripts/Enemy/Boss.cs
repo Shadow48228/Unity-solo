@@ -145,19 +145,21 @@ public class Boss : MonoBehaviour
         if (collision.gameObject.tag == "ARBullet")
         {
             health -= 16;
-            Destroy(gameObject.tag == "ArBullet"); // aa
         }
 
         if (collision.gameObject.tag == "PistolBullet")
         {
             health -= 13;
-            Destroy(gameObject.tag == "PistolBullet"); // aa
         }
 
         if (collision.gameObject.tag == "BossBullet")
         {
             health -= 1;
-            Destroy(gameObject.tag == "BossBullet"); // aa
+        }
+
+        if (collision.gameObject.tag == "CannonBullet")
+        {
+            health -= 20;
         }
 
         if (health <= 0f)
