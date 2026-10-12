@@ -246849,6 +246849,14 @@ PrefabInstance:
       value: BossEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 8736231113783650809, guid: 3cf5892daf006ef41ab8f23638062a37, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 6312627526437535292, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+    - target: {fileID: 8736231113783650809, guid: 3cf5892daf006ef41ab8f23638062a37, type: 3}
+      propertyPath: spawnInterval
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736231113783650809, guid: 3cf5892daf006ef41ab8f23638062a37, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -377912,6 +377920,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f212717f7fb0064292fd7f1b7f46a23, type: 3}
+--- !u!1001 &1846888667344016893
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3127028030087103348, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: detectionRange
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 81.07547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 266.6045
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -718.49225
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660752518102132836, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312627526437535292, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+      propertyPath: m_Name
+      value: basic enemy (boss fight)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
 --- !u!1001 &4237012391793611115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378554,3 +378623,4 @@ SceneRoots:
   - {fileID: 247634037}
   - {fileID: 1297630108}
   - {fileID: 1823679408}
+  - {fileID: 1846888667344016893}
