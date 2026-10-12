@@ -130,9 +130,4 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    private void Destroy(bool v) // aa
-    {
-        throw new NotImplementedException();
-    }
 }
