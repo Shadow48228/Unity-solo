@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class Enemy : MonoBehaviour
 
     [Header("Combat Settings")]
     public float shootingRange = 10f;
-    public float fireRate = 0.5f;       
-    public int maxAmmo = 10;            
+    public float fireRate = 0.5f;
+    public int maxAmmo = 10;
     public float reloadTime = 2.0f;
 
     private int currentAmmo;
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
 
     public int health = 100;
     public int maxHealth = 100;
+
 
     void Start()
     {
@@ -78,7 +80,7 @@ public class Enemy : MonoBehaviour
         Rigidbody rb = ARBullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.linearVelocity = firePoint.forward * 20f; 
+            rb.linearVelocity = firePoint.forward * 20f;
         }
     }
 
@@ -100,6 +102,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "PistolBullet")
         {
             health -= 13;
+
         }
 
         if (collision.gameObject.tag == "BossBullet")
@@ -114,8 +117,18 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0f)
         {
-            Destroy(gameObject);
+            Die();
         }
+
+        if (collision.gameObject.tag == "spike")
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
     private void Destroy(bool v) // aa
