@@ -193,14 +193,14 @@ MonoBehaviour:
   reloading: 0
   weaponID: 0
   weaponName: 
-  projLifespan: 20
-  projVelocity: 75
+  projLifespan: 10
+  projVelocity: 150
   reloadCooldown: 3
   rof: 2
   fireModes: 0
   currentFiremode: 0
   clip: 0
-  clipSize: 3
+  clipSize: 5
   ammo: 0
-  maxAmmo: 100
-  ammoRefill: 10
+  maxAmmo: 200
+  ammoRefill: 20

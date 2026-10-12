@@ -166,8 +166,8 @@ MonoBehaviour:
   reloading: 0
   weaponID: 1
   weaponName: Pistol
-  projLifespan: 5
-  projVelocity: 100
+  projLifespan: 0.15
+  projVelocity: 500
   reloadCooldown: 1
   rof: 1
   fireModes: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   clipSize: 18
   ammo: 0
   maxAmmo: 100
-  ammoRefill: 18
+  ammoRefill: 40
 --- !u!54 &1509044994833691535
 Rigidbody:
   m_ObjectHideFlags: 0
