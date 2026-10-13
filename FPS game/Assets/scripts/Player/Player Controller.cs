@@ -265,7 +265,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "ARBullet")
         {
-            health -= 16;
+            health -= 15;
         }
 
         if (collision.gameObject.tag == "MinigunBullet")
@@ -280,7 +280,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "PistolBullet")
         {
-            health -= 13;
+            health -= 10;
         }
 
         if (health <= 0f)

@@ -193,7 +193,7 @@ MonoBehaviour:
   reloading: 0
   weaponID: 2
   weaponName: AR
-  projLifespan: 0.2
+  projLifespan: 0.35
   projVelocity: 500
   reloadCooldown: 2
   rof: 0.5

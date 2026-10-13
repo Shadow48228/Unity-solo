@@ -144,12 +144,12 @@ public class Boss : MonoBehaviour
     {
         if (collision.gameObject.tag == "ARBullet")
         {
-            health -= 16;
+            health -= 20;
         }
 
         if (collision.gameObject.tag == "PistolBullet")
         {
-            health -= 13;
+            health -= 23;
         }
 
         if (collision.gameObject.tag == "BossBullet")
@@ -159,7 +159,7 @@ public class Boss : MonoBehaviour
 
         if (collision.gameObject.tag == "CannonBullet")
         {
-            health -= 20;
+            health -= 30;
         }
 
         if (health <= 0f)

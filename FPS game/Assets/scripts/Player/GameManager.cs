@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI clipText;
     public TextMeshProUGUI ammoText;
 
-    public Image healthBar;
+    public TextMeshProUGUI healthText;
 
     public bool paused = false;
 
@@ -31,8 +31,7 @@ public class GameManager : MonoBehaviour
             weaponName = GameObject.Find("weaponName").GetComponent<TextMeshProUGUI>();
             clipText = GameObject.Find("clipText").GetComponent<TextMeshProUGUI>();
             ammoText = GameObject.Find("ammoText").GetComponent<TextMeshProUGUI>();
-
-            healthBar = GameObject.Find("healthBar").GetComponent<Image>();
+            healthText = GameObject.Find("healthText").GetComponent<TextMeshProUGUI>();
 
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -65,7 +64,7 @@ public class GameManager : MonoBehaviour
                 PauseMenu.SetActive(false);
             }
 
-            healthBar.fillAmount = (float)player.health / (float)player.maxHealth;
+            healthText.text = "health: " + player.health + '/' + player.maxHealth;
 
             if (player.currentWeapon)
             {
