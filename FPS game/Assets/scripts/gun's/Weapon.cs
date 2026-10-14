@@ -31,12 +31,14 @@ public class Weapon : MonoBehaviour
     public int maxAmmo;
     public int ammoRefill;
 
+    AudioSource GunShot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         firePoint = transform.GetChild(0);
         firingDirection = Camera.main;
+        GunShot = GetComponent<AudioSource>();
     }
 
     public void equip(PlayerController p)
@@ -68,6 +70,7 @@ public class Weapon : MonoBehaviour
     {
         if (canFire && !reloading && clip > 0)
         {
+            GunShot.Play();
             GameObject p = Instantiate(projectile, firePoint.position, firePoint.rotation);
             p.GetComponent<Rigidbody>().AddForce(firingDirection.transform.forward * projVelocity);
             Destroy(p, projLifespan);

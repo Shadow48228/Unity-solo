@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public int maxHealth = 100;
 
+    AudioSource speaker;
+
 
     void Start()
     {
@@ -37,6 +39,8 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         currentAmmo = maxAmmo;
+
+        speaker = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -73,6 +77,8 @@ public class Enemy : MonoBehaviour
 
     void Shoot()
     {
+        speaker.Play();
+
         currentAmmo--;
 
         GameObject ARBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
