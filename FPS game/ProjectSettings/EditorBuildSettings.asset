@@ -9,7 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 83bf94d9937286346b6145b412e90cc6
   - enabled: 1
-    path: Assets/Scenes/OutdoorsScene/OutdoorsScene.unity
+    path: Assets/Prefab/menu's/OutdoorsScene.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
+  - enabled: 1
+    path: Assets/Prefab/menu's/badEnding.unity
+    guid: abc7df4ebdb2b664a8d6aeb324414f36
+  - enabled: 1
+    path: Assets/Prefab/menu's/goodEnding.unity
+    guid: 14e4fef19a9c4ec40b2dde838638dad2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
