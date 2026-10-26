@@ -130,6 +130,16 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+
+        if (collision.gameObject.tag == "Box")
+        {
+            health -= 1;
+        }
+
+        if (collision.gameObject.tag == "Ball")
+        {
+            health -= 20;
+        }
     }
 
     void Die()

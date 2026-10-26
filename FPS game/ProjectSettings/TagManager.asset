@@ -22,6 +22,8 @@ TagManager:
   - armorT3
   - CannonBullet
   - healthBar
+  - Box
+  - Ball
   layers:
   - Default
   - TransparentFX

@@ -155,7 +155,6 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = (tempMove.x * transform.right) +
                             (tempMove.y * transform.up) +
                             (tempMove.z * transform.forward);
-
     }
 
     // For specific movement
