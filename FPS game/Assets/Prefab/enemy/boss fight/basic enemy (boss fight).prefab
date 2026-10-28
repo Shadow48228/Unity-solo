@@ -152,7 +152,7 @@ MonoBehaviour:
   player: {fileID: 5087817005195234514, guid: 56f7cc37c084a9544be34089574c0f45, type: 3}
   bulletPrefab: {fileID: 405727791559951628, guid: 87e255dd0d27b40418d619a072923b89, type: 3}
   firePoint: {fileID: 5085350746891334586}
-  shootingRange: 20
+  shootingRange: 40
   fireRate: 0.75
   maxAmmo: 30
   reloadTime: 2
