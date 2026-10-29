@@ -41,15 +41,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0681cd8263793724c901d3d7d743c58b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1104.3427
+      value: -1207.5945
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0681cd8263793724c901d3d7d743c58b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.97
+      value: 1.3761954
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0681cd8263793724c901d3d7d743c58b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -784.3
+      value: -695.4685
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0681cd8263793724c901d3d7d743c58b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -177,7 +177,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1bf3e5e16639a5b4cb98345ed7450f10, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
