@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class AR : Weapon
 {
     /*[Header("Rifle Stats")] // fire modes

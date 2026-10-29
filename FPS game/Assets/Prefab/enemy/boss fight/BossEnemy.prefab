@@ -158,13 +158,13 @@ MonoBehaviour:
   fireRate: 1
   maxAmmo: 100
   reloadTime: 2
-  enemyPrefab: {fileID: 6312627526437535292, guid: 2c89db63201d2944d903093dc2cabbc4, type: 3}
+  enemyPrefab: {fileID: 6391996348513718933, guid: 948d882582783e7478950df498177cdb, type: 3}
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  spawnInterval: 100
+  spawnInterval: 30
   isFollowing: 0
   detectionRange: 100
   agent: {fileID: 0}
@@ -182,7 +182,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 99e6c737978b07347b36d5fd2b367e8c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

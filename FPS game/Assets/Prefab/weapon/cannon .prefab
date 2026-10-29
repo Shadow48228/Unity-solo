@@ -296,12 +296,12 @@ MonoBehaviour:
   weaponName: cannon
   projLifespan: 10
   projVelocity: 150
-  reloadCooldown: 3
-  rof: 2
+  reloadCooldown: 2
+  rof: 1.5
   fireModes: 0
   currentFiremode: 0
-  clip: 0
-  clipSize: 5
+  clip: 5
+  clipSize: 10
   ammo: 0
   maxAmmo: 200
   ammoRefill: 20
