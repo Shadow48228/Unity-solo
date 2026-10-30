@@ -144352,7 +144352,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 07679ea27ddf5af49a393c0f6b0ad474, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -290981,7 +290981,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: a3d18c4a41d900e4abedc22ff7a3c97f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -390965,7 +390965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Endings
   targetSceneName: badEnding
-  delayTime: 10
+  delayTime: 22
 --- !u!82 &771611049
 AudioSource:
   m_ObjectHideFlags: 0
@@ -390977,7 +390977,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: fd09b715e7eea89479f682a93bfd204d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -524767,7 +524767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Endings
   targetSceneName: goodEnding
-  delayTime: 10
+  delayTime: 22
 --- !u!82 &1023046895
 AudioSource:
   m_ObjectHideFlags: 0
@@ -524779,7 +524779,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 9bc5b73135bf6a74f9916325fdb76624, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -836212,7 +836212,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 502fd377b8dea59418ca197b0f7316db, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1068768,7 +1068768,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: b110ce351b121cb4a8c0f77d72ab80b7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
