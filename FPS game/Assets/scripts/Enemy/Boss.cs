@@ -37,12 +37,19 @@ public class Boss : MonoBehaviour
     private Coroutine SpawnCoroutine;
     private bool isCoroutineRunning = false;
 
+    AudioSource speaker;
+
+    Animator anim;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
 
         currentAmmo = maxAmmo;
+
+        speaker = GetComponent<AudioSource>();
+
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -92,6 +99,13 @@ public class Boss : MonoBehaviour
                 isCoroutineRunning = false;
             }
         }
+
+        if (agent.velocity != Vector3.zero)
+        {
+            anim.SetBool("BossWalking", true);
+        }
+        else
+            anim.SetBool("BossWalking", false);
     }
 
     IEnumerator SpawnEnemiesRoutine()
@@ -121,6 +135,8 @@ public class Boss : MonoBehaviour
 
     void Shoot()
     {
+        speaker.Play();
+
         currentAmmo--;
 
         GameObject ARBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -128,7 +144,7 @@ public class Boss : MonoBehaviour
         Rigidbody rb = ARBullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.linearVelocity = firePoint.forward * 20f;
+            rb.linearVelocity = firePoint.forward * 30f;
         }
     }
 
